@@ -1,0 +1,5 @@
+# [Israel State Budget](http://ckan.net/package/israel-state-budget) ETL tools
+
+Convert the Excel spreadsheet to CSV:
+
+    $ python israel.py < spreadsheet.xls > output.csv
