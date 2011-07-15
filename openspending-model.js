@@ -1,6 +1,6 @@
 { 
   "dataset": {
-    "model_rev": 1,
+    "model_rev": 2,
     "name": "israel-state-budget",
     "label": "Israel State Budget", 
     "description": "<p>Obtained by <a href=\"http://www.meida.org.il\">Movement for Freedom of Information in Israel</a>.",
@@ -46,21 +46,6 @@
       "label": "Budget year",
       "datatype": "date",
       "type": "value"
-    },
-    "primary": {
-      "fields": [
-        {
-          "column": "primary",
-          "datatype": "string",
-          "default_value": "",
-          "constant": "",
-          "name": "label"
-        }
-      ],
-      "label": "Primary classification",
-      "type": "classifier",
-      "description": "An artificial grouping to allow for an easier overview of spending.",
-      "taxonomy": "israel-state-budget:level:0"
     },
     "section": {
       "fields": [
@@ -126,27 +111,11 @@
   "views": [
     {
       "entity": "dataset",
-      "label": "Spending by Overview Category",
-      "name": "default",
-      "dimension": "dataset",
-      "breakdown": "primary",
-      "filters": {"name": "israel-state-budget"}           
-    },
-    {
-      "entity": "dataset",
       "label": "Spending by Section",
-      "name": "section",
+      "name": "default",
       "dimension": "dataset",
       "breakdown": "section",
       "filters": {"name": "israel-state-budget"}           
-    },
-    {
-      "entity": "classifier",
-      "label": "Spending by Section",
-      "name": "default",
-      "dimension": "primary",
-      "breakdown": "section",
-      "filters": {"taxonomy": "israel-state-budget:level:0"}           
     },
     {
       "entity": "classifier",
