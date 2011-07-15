@@ -60,8 +60,7 @@
       "label": "Primary classification",
       "type": "classifier",
       "description": "An artificial grouping to allow for an easier overview of spending.",
-      "taxonomy": "israel-state-budget:classification",
-      "level": 0
+      "taxonomy": "israel-state-budget:level:0"
     },
     "section": {
       "fields": [
@@ -76,8 +75,7 @@
       "label": "Section",
       "type": "classifier",
       "description": "Israeli spending code, level 1 (Section).",
-      "taxonomy": "israel-state-budget:classification",
-      "level": 1
+      "taxonomy": "israel-state-budget:level:1"
     },
     "entity": {
       "fields": [
@@ -92,9 +90,8 @@
       "label": "Entity",
       "type": "classifier",
       "description": "Israeli spending code, level 2 (Entity).",
-      "taxonomy": "israel-state-budget:classification",
-      "level": 2
-    },
+      "taxonomy": "israel-state-budget:level:2"
+    },                                         
     "programme": {
       "fields": [
         {
@@ -108,8 +105,7 @@
       "label": "Programme",
       "type": "classifier",
       "description": "Israeli spending code, level 3 (Programme).",
-      "taxonomy": "israel-state-budget:classification",
-      "level": 3
+      "taxonomy": "israel-state-budget:level:3"
     },
     "concept": {
       "fields": [
@@ -124,8 +120,7 @@
       "label": "Concept",
       "type": "classifier",
       "description": "Israeli spending code, level 4 (Concept).",
-      "taxonomy": "israel-state-budget:classification",
-      "level": 4
+      "taxonomy": "israel-state-budget:level:4"
     }  
   },
   "views": [
@@ -151,7 +146,7 @@
       "name": "default",
       "dimension": "primary",
       "breakdown": "section",
-      "filters": {"taxonomy": "israel-state-budget:classification", "level": 0}           
+      "filters": {"taxonomy": "israel-state-budget:level:0"}           
     },
     {
       "entity": "classifier",
@@ -159,7 +154,7 @@
       "name": "default",
       "dimension": "section",
       "breakdown": "entity",
-      "filters": {"taxonomy": "israel-state-budget:classification", "level": 1}        
+      "filters": {"taxonomy": "israel-state-budget:level:1"}        
     },
     {
       "entity": "classifier",
@@ -167,7 +162,7 @@
       "name": "default",
       "dimension": "entity",
       "breakdown": "programme",
-      "filters": {"taxonomy": "israel-state-budget:classification", "level": 2}           
+      "filters": {"taxonomy": "israel-state-budget:level:2"}           
     },
     {
       "entity": "classifier",
@@ -175,7 +170,7 @@
       "name": "default",
       "dimension": "programme",
       "breakdown": "concept",
-      "filters": {"taxonomy": "israel-state-budget:classification", "level": 3}           
+      "filters": {"taxonomy": "israel-state-budget:level:3"}           
     }
   ]                       
 }
