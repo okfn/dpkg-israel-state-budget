@@ -1,10 +1,10 @@
 { 
   "dataset": {
-    "model_rev": 2,
     "name": "israel-state-budget",
     "label": "Israel State Budget", 
     "description": "<p>Obtained by <a href=\"http://www.meida.org.il\">Movement for Freedom of Information in Israel</a>.",
-    "currency": "ILS"
+    "currency": "ILS",
+    "unique_keys": ["unique_id"]
   },  
   "mapping": {
     "from": {
@@ -24,20 +24,18 @@
       "label": "Paid to"
     },
     "amount": {
-      "default_value": "",
       "description": "",
       "column": "amount",
       "label": "",
       "datatype": "float",
       "type": "value"
-    },
-    "grant_title": {
-      "default_value": "",
+    }, 
+    "unique_id": {
       "description": "",
-      "column": "grant_title",
-      "label": "Grant title",
+      "column": "unique_id",
+      "label": "Unique ID",
       "datatype": "string",
-      "type": "value"   
+      "type": "value"
     },
     "time": {
       "default_value": "",

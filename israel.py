@@ -20,17 +20,25 @@ def to_float(s):
 
     raise ValueError("can't handle value: '%s', type: %s" % (s, type(s)))
 
+def make_uid_generator():
+    ids = {}
+    def get_id_for_year(year):
+        if year in ids:
+            ids[year] += 1
+        else:
+            ids[year] = 0
+        return '%s-%s' % (year, ids[year])
+    return get_id_for_year
 
-DATASET_NAME = "israel-state-budget"
+uid_generator = make_uid_generator()
 
 book = xlrd.open_workbook(file_contents=sys.stdin.read())
 sheet = book.sheet_by_index(0)
 print("Number of rows: " + str(sheet.nrows), file=sys.stderr)
-entry_id = 0
 
 fieldnames = [
     'year',
-    'name',
+    'unique_id',
     'amount',
     'section',
     'entity',
@@ -64,8 +72,8 @@ for row in range(4, sheet.nrows): # for each row after the header
 
         e = {
             'amount': exp,
-            'name': DATASET_NAME + '-r' + str(entry_id) + "-net" + str(year),
             'year': year,
+            'unique_id': uid_generator(year),
             'section':   fmt.format(name=l1_name, id=l1_id).encode('utf8'),
             'entity':    fmt.format(name=l2_name, id=l2_id).encode('utf8'),
             'programme': fmt.format(name=l3_name, id=l3_id).encode('utf8'),
@@ -73,7 +81,4 @@ for row in range(4, sheet.nrows): # for each row after the header
         }
 
         writer.writerow(e)
-
-        entry_id += 1
-
 
