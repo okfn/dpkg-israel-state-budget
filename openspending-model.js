@@ -47,13 +47,8 @@
     },
     "section": {
       "fields": [
-        {
-          "column": "section",
-          "datatype": "string",
-          "default_value": "",
-          "constant": "",
-          "name": "label"
-        }
+        {"column": "section_id", "datatype": "id", "name": "name"},
+        {"column": "section_name", "datatype": "string", "name": "label"}
       ],
       "label": "Section",
       "type": "classifier",
@@ -62,13 +57,8 @@
     },
     "entity": {
       "fields": [
-        {
-          "column": "entity",
-          "datatype": "string",
-          "default_value": "",
-          "constant": "",
-          "name": "label"
-        }
+        {"column": "entity_id", "datatype": "id", "name": "name"},
+        {"column": "entity_name", "datatype": "string", "name": "label"}
       ],
       "label": "Entity",
       "type": "classifier",
@@ -77,13 +67,8 @@
     },                                         
     "programme": {
       "fields": [
-        {
-          "column": "programme",
-          "datatype": "string",
-          "default_value": "",
-          "constant": "",
-          "name": "label"
-        }
+        {"column": "programme_id", "datatype": "id", "name": "name"},
+        {"column": "programme_name", "datatype": "string", "name": "label"}
       ],
       "label": "Programme",
       "type": "classifier",
@@ -92,13 +77,8 @@
     },
     "concept": {
       "fields": [
-        {
-          "column": "concept",
-          "datatype": "string",
-          "default_value": "",
-          "constant": "",
-          "name": "label"
-        }
+        {"column": "concept_id", "datatype": "id", "name": "name"},
+        {"column": "concept_name", "datatype": "string", "name": "label"}
       ],
       "label": "Concept",
       "type": "classifier",

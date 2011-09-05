@@ -40,10 +40,14 @@ fieldnames = [
     'year',
     'unique_id',
     'amount',
-    'section',
-    'entity',
-    'programme',
-    'concept'
+    'section_id',
+    'section_name',
+    'entity_id',
+    'entity_name',
+    'programme_id',
+    'programme_name',
+    'concept_id',
+    'concept_name'
 ]
 
 writer = csv.DictWriter(sys.stdout, fieldnames)
@@ -74,10 +78,14 @@ for row in range(4, sheet.nrows): # for each row after the header
             'amount': exp,
             'year': year,
             'unique_id': uid_generator(year),
-            'section':   fmt.format(name=l1_name, id=l1_id).encode('utf8'),
-            'entity':    fmt.format(name=l2_name, id=l2_id).encode('utf8'),
-            'programme': fmt.format(name=l3_name, id=l3_id).encode('utf8'),
-            'concept':   fmt.format(name=l4_name, id=l4_id).encode('utf8')
+            'section_name':   l1_name.encode('utf8'),
+            'section_id':     l1_id.encode('utf8'),
+            'entity_name':    l2_name.encode('utf8'),
+            'entity_id':      l2_id.encode('utf8'),
+            'programme_name': l3_name.encode('utf8'),
+            'programme_id':   l3_id.encode('utf8'),
+            'concept_name':   l4_name.encode('utf8'),
+            'concept_id':     l4_id.encode('utf8')
         }
 
         writer.writerow(e)
